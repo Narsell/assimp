@@ -1,7 +1,6 @@
 project "assimp"
     kind "StaticLib"
     language "C++"
-    staticruntime "On"
     cppdialect "C++17"
 
     targetdir ("../../../Binaries/" .. OutputDir .. "/%{prj.name}")
@@ -111,19 +110,3 @@ project "assimp"
 		"ASSIMP_BUILD_NO_X3D_IMPORTER",
 		"ASSIMP_BUILD_NO_XGL_IMPORTER"
     }
-
-    filter "system:linux"
-        systemversion "latest"
-        pic "On"
-
-    filter "system:windows"
-        systemversion "latest"
-
-    filter "configurations:Debug"
-        runtime "Debug"
-        symbols "On"
-
-    filter "configurations:Release"
-        runtime "Release"
-        optimize "On"
-        symbols "Off"
