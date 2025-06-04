@@ -110,3 +110,9 @@ project "assimp"
 		"ASSIMP_BUILD_NO_X3D_IMPORTER",
 		"ASSIMP_BUILD_NO_XGL_IMPORTER"
     }
+
+	filter "system:linux"
+		defines
+		{
+			"HAVE_UNISTD_H"
+		}
