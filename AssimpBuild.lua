@@ -1,7 +1,7 @@
 project "assimp"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++17"
+    cppdialect "C++20"
 
     targetdir ("../../../Binaries/" .. OutputDir .. "/%{prj.name}")
     objdir ("../../../Intermediates/" .. OutputDir .. "/%{prj.name}")
@@ -112,6 +112,7 @@ project "assimp"
     }
 
 	filter "system:linux"
+		pic "On"
 		defines
 		{
 			"HAVE_UNISTD_H"
